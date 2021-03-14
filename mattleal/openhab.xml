@@ -6,13 +6,12 @@
   <Name>openHAB</Name>
   <Project>https://www.openhab.org/</Project>
   <Changes>
-[center][img width='155px' src='https://www.openhab.org/demo/openhab-logo-square.png'][/center]
+    [center][img width='155px' src='https://www.openhab.org/demo/openhab-logo-square.png'][/center]
 
-[center][font size=4]openHAB Server Change Log[/font][/center]
+    [center][font size=4]openHAB Server Change Log[/font][/center]
 
-[font size=3]2021.03.13[/font]
-- Initial Release
-
+    [font size=3]2021.03.13[/font]
+    - Initial Release
   </Changes>
   <Overview>
     Empowering the smart home.  A vendor and technology agnostic open source automation software for your home, and it's free!
