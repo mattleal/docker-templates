@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <Date>2021-03-13</Date>
-  <Beta>False</Beta>
-  <Category>Home Automation</Category>
-  <Name>openHAB</Name>
-  <Project>https://www.openhab.org/</Project>
-  <Changes>
-    [center][img width='155px' src='https://www.openhab.org/demo/openhab-logo-square.png'][/center]
-
-    [center][font size=4]openHAB Server Change Log[/font][/center]
-
-    [font size=3]2021.03.13[/font]
-    - Initial Release
-  </Changes>
-  <Overview>
-    Empowering the smart home.  A vendor and technology agnostic open source automation software for your home, and it's free!
-  </Overview>
-  <Description>
-    openHAB runs on your hardware, doesn't require any cloud service to work, keeps your data privately at home and talks directly to your local devices whenever possible. At the core of our philosophy is that you always remain in control.
-  </Description>
+<Container>
+  <Name>openhab-online</Name>
+  <Description>openHAB - a vendor and technology agnostic open source automation software for your home.</Description>
   <Registry>https://hub.docker.com/r/openhab/openhab/</Registry>
-  <GitHub>http://www.openhab.org/</GitHub>
-  <Repository>openhab/openhab</Repository>
-  <Support>https://community.openhab.org/</Support>
+  <Repository>openhab/openhab:amd64-online</Repository>
   <BindTime>true</BindTime>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
+  <Environment/>
   <Networking>
     <Mode>host</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8443</HostPort>
+        <ContainerPort>8443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5555</HostPort>
+        <ContainerPort>5555</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
-  <Environment/>
   <Data>
     <Volume>
       <HostDir>/etc/localtime</HostDir>
@@ -37,27 +34,23 @@
       <Mode>ro</Mode>
     </Volume>
     <Volume>
-      <HostDir>/etc/timezone</HostDir>
-      <ContainerDir>/etc/timezone</ContainerDir>
-      <Mode>ro</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>openhab_addons</HostDir>
-      <ContainerDir>/openhab/addons</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>openhab_conf</HostDir>
+      <HostDir>/mnt/user/appdata/openhab/conf/</HostDir>
       <ContainerDir>/openhab/conf</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>openhab_userdata</HostDir>
+      <HostDir>/mnt/user/appdata/openhab/userdata/</HostDir>
       <ContainerDir>/openhab/userdata</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <Banner></Banner>
-  <Icon>https://www.openhab.org/demo/openhab-logo-square.png</Icon>
-</Containers>
+  <Version></Version>
+  <WebUI>http://[IP]:8080/</WebUI>
+  <Banner>https://raw.githubusercontent.com/tinglis1/docker-containers/master/openhab/openhab_banner.png</Banner>
+  <Icon>https://raw.githubusercontent.com/tinglis1/docker-containers/master/openhab/openhab-logo-square.png</Icon>
+  <Beta>False</Beta>
+  <Category>HomeAutomation:</Category>
+  <Date>2016-06-21</Date> 
+  <Support></Support>
+  <Project>https://hub.docker.com/r/openhab/openhab/</Project>
+  </Container>
